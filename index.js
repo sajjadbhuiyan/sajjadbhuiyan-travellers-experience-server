@@ -1,7 +1,7 @@
 const express = require('express')
-const app = express()
+const app = express();
 const cors = require('cors');
-require('dotenv').config()
+require('dotenv').config();
 const { MongoClient } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
 const port = process.env.PORT || 5000;
@@ -49,7 +49,7 @@ async function run(){
 }
 
 run().catch(console.dir)
-
+ 
 app.get('/', (req, res) => {
   res.send('Hello Travelers!')
 })
