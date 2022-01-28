@@ -47,6 +47,19 @@ async function run(){
       const blog = await blogColoection.findOne(query);
       res.json(blog);
   })
+
+
+  // POST API for Blog
+  app.post('/blogs', async(req, res)=>{
+    const blogs = req.body;
+    console.log('hit the post api', blogs);
+
+    const result = await blogColoection.insertOne(blogs);
+    console.log(result);
+    res.json(result);
+} )
+
+
    } finally{
     // await client.close();
    }
